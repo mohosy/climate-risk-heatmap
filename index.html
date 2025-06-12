@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Climate Risk Heatmap</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="sidebar">
+        <p class="eyebrow">Scenario Modeling</p>
+        <h1>Climate Risk Heatmap</h1>
+        <p class="intro">Explore projected environmental risk under changing temperature, rainfall, and adaptation strategies.</p>
+
+        <div class="card">
+          <h2>Scenario Inputs</h2>
+          <label>Global Warming (+°C)
+            <input id="tempInput" type="range" min="1.0" max="4.5" step="0.1" value="2.3" />
+            <span id="tempValue">2.3</span>
+          </label>
+          <label>Rainfall Volatility
+            <input id="rainInput" type="range" min="0.5" max="3.0" step="0.1" value="1.6" />
+            <span id="rainValue">1.6</span>
+          </label>
+          <label>Adaptation Budget
+            <input id="budgetInput" type="range" min="0" max="100" step="1" value="42" />
+            <span id="budgetValue">42</span>
+          </label>
+        </div>
+
+        <div class="card">
+          <h2>Actions</h2>
+          <div class="row">
+            <button id="simulateBtn">Simulate Year</button>
+            <button id="randomizeBtn">Random Scenario</button>
+          </div>
+        </div>
+
+        <div class="card stats">
+          <h2>Risk Summary</h2>
+          <p>Average Risk: <strong id="avgRisk">0</strong></p>
+          <p>High-Risk Cells: <strong id="hotspots">0</strong></p>
+          <p>Resilience Index: <strong id="resilience">0</strong></p>
+          <p>Alert Level: <strong id="alert">Low</strong></p>
+        </div>
+      </section>
+
+      <section class="map-wrap">
+        <canvas id="map" width="980" height="620"></canvas>
+      </section>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
